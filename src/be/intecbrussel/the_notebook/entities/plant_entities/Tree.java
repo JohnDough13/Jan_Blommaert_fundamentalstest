@@ -1,11 +1,11 @@
 package be.intecbrussel.the_notebook.entities.plant_entities;
 
 public class Tree extends Plant {
-    private LeafType leafType;
+    private LeafType leafType = LeafType.HEART;
 
 
     public Tree(String name) {
-        super(name);
+        this(name,16);
     }
 
     public Tree(String name, double height) {
