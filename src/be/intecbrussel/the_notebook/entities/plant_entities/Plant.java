@@ -3,27 +3,28 @@ package be.intecbrussel.the_notebook.entities.plant_entities;
 public class Plant {
 
     private String name;
-    private Double height;
+    private double height;
 
-    public Plant(String name){
-        this.name=name;
+    public Plant(String name) {
+
+        this(name, 1.0);
     }
 
-    public Plant(String name,Double height){
-        this.name=name;
-        this.height = height;
+    public Plant(String name, double height) {
+        this.name = name;
+        setHeight(height);
     }
 
     public String getName() {
         return name;
     }
 
-    public Double getHeight() {
+    public double getHeight() {
         return height;
     }
 
-    public void setHeight(Double height) {
-        this.height = height;
+    public void setHeight(double height) {
+        this.height = (height > 0) ? height : -height;
     }
 
 }

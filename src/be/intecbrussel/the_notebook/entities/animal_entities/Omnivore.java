@@ -8,14 +8,14 @@ import java.util.Set;
 public class Omnivore extends Animal{
 
     Set<Plant> plantDiet = new LinkedHashSet<>();
-    protected double maxFoodSize;
+    private double maxFoodSize;
 
     public Omnivore(String name) {
         super(name);
     }
 
     public Omnivore(String name, double weight, double height, double length) {
-        super(weight, height, length);
+        super(name,weight, height, length);
     }
 
     public Set<Plant> getPlantDiet() {
@@ -35,12 +35,12 @@ public class Omnivore extends Animal{
     }
 
     public void addPlantToDiet(Plant plant){
-        this.plantDiet = (Set<Plant>) plant;
+        plantDiet.add(plant);
     }
 
     @Override
     public String toString() {
-        return "Omnivore{" +
+        return "Omnivore'"+super.getName()+"'{" +
                 "plantDiet=" + plantDiet +
                 '}';
     }

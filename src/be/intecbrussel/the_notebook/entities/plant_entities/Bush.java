@@ -2,17 +2,15 @@ package be.intecbrussel.the_notebook.entities.plant_entities;
 
 public class Bush extends Plant {
 
-    protected String fruit;
-    protected LeafType leafType;
+    private String fruit;
+    private LeafType leafType;
 
-    public Bush(String name, String fruit) {
+    public Bush(String name) {
         super(name);
-        this.fruit = fruit;
     }
 
-    public Bush(String name, Double height, String fruit) {
+    public Bush(String name, double height) {
         super(name, height);
-        this.fruit = fruit;
     }
 
     public String getFruit() {
@@ -33,8 +31,8 @@ public class Bush extends Plant {
 
     @Override
     public String toString() {
-        return "Bush{" +
-                "fruit='" + fruit + '\'' +
+        return "Bush '" + super.getName()+"'{" +
+                "fruit='" + fruit + '\'' +", leaftype='"+leafType+'\''+
                 '}';
     }
 }

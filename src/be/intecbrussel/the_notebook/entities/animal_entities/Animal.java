@@ -7,10 +7,11 @@ public class Animal {
     private double length;
 
     public Animal(String name) {
-        this.name = name;
+        this(name, 4.7, 9.8, 6.8);
     }
 
-    public Animal(double weight, double height, double length) {
+    public Animal(String name, double weight, double height, double length) {
+        this.name = name;
         this.weight = weight;
         this.height = height;
         this.length = length;
@@ -25,7 +26,7 @@ public class Animal {
     }
 
     public void setWeight(double weight) {
-        this.weight = weight;
+        this.weight = (weight > 0) ? weight : -weight;
     }
 
     public double getHeight() {
@@ -33,7 +34,7 @@ public class Animal {
     }
 
     public void setHeight(double height) {
-        this.height = height;
+        this.height = (height > 0) ? height : -height;
     }
 
     public double getLength() {
@@ -41,6 +42,6 @@ public class Animal {
     }
 
     public void setLength(double length) {
-        this.length = length;
+        this.length = (length>0)?length:-length;
     }
 }

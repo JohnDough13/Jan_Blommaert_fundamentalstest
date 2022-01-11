@@ -6,19 +6,19 @@ import be.intecbrussel.the_notebook.entities.animal_entities.Herbivore;
 import be.intecbrussel.the_notebook.entities.animal_entities.Omnivore;
 import be.intecbrussel.the_notebook.entities.plant_entities.Plant;
 
+import java.util.Comparator;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class ForestNotebook {
-    protected List<Carnivore> carnivores;
-    protected List<Omnivore> omnivores;
-    protected List<Herbivore> herbivores;
-    protected int plantCount;
-    protected int animalCount;
-    protected List<Animal> animals;
-    protected List<Plant> plants;
-
-    public ForestNotebook() {
-    }
+    private List<Carnivore> carnivores = new LinkedList<>();
+    private List<Omnivore> omnivores = new LinkedList<>();
+    private List<Herbivore> herbivores = new LinkedList<>();
+    private int plantCount = 0;
+    private int animalCount = 0;
+    private List<Animal> animals = new LinkedList<>();
+    private List<Plant> plants = new LinkedList<>();
 
     public List<Carnivore> getCarnivores() {
         return carnivores;
@@ -52,27 +52,52 @@ public class ForestNotebook {
         return animalCount;
     }
 
-    public void addAnimal(List<Animal> animal) {
-        this.animals = (List<Animal>) animal;
+    public void addPlant(Plant plant) {
+        plants.add(plant);
+        plantCount++;
+    }
+
+    public void addAnimal(Animal animal) {
+        animals.add(animal);
+        if (animal.getClass() == Carnivore.class) {
+            carnivores.add((Carnivore) animal);
+        } else if (animal.getClass() == Herbivore.class) {
+            herbivores.add((Herbivore) animal);
+        } else {
+            System.out.println("Unregistered specimen");
+        }
+        animalCount++;
     }
 
     public void printNotebook() {
-
+        System.out.println("Every animal seen so far:");
+        animals.forEach(System.out::println);
+        System.out.println("");
+        System.out.println("Every plant seen so far:");
+        plants.forEach(System.out::println);
     }
 
     public void sortAnimalsByName() {
-
+        animals = List.of((Animal[]) Stream.of((Animal[]) animals.toArray())
+                .sorted(Comparator.comparing(Animal::getName))
+                .toArray());
     }
 
     public void sortPlantsByName() {
-
+        plants = List.of((Plant[]) Stream.of((Plant[]) plants.toArray())
+                .sorted(Comparator.comparing(Plant::getName))
+                .toArray());
     }
 
-    public void sortAnimalsByHeight(){
-
+    public void sortAnimalsByHeight() {
+        animals = List.of((Animal[]) Stream.of((Animal[]) animals.toArray())
+                .sorted(Comparator.comparing(Animal::getHeight))
+                .toArray());
     }
 
-    public void sortPlantsByHeight(){
-
+    public void sortPlantsByHeight() {
+        plants = List.of((Plant[]) Stream.of((Plant[]) plants.toArray())
+                .sorted(Comparator.comparing(Plant::getHeight))
+                .toArray());
     }
 }

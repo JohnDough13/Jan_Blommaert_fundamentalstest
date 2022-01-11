@@ -2,16 +2,15 @@ package be.intecbrussel.the_notebook.entities.plant_entities;
 
 public class Flower extends Plant {
 
-    protected Scent smell;
+    private Scent smell;
 
 
     public Flower(String name) {
         super(name);
     }
 
-    public Flower(String name, Double height, Scent smell) {
+    public Flower(String name, Double height) {
         super(name, height);
-        this.smell = smell;
     }
 
     public Scent getSmell() {
@@ -24,7 +23,7 @@ public class Flower extends Plant {
 
     @Override
     public String toString() {
-        return "Flower{" +
+        return "Flower '" + super.getName() + "'{" +
                 "smell=" + smell +
                 '}';
     }

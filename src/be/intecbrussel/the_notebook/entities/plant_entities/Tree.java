@@ -1,16 +1,15 @@
 package be.intecbrussel.the_notebook.entities.plant_entities;
 
 public class Tree extends Plant {
-    protected LeafType leafType;
+    private LeafType leafType;
 
 
     public Tree(String name) {
         super(name);
     }
 
-    public Tree(String name, Double height, LeafType leafType) {
+    public Tree(String name, double height) {
         super(name, height);
-        this.leafType = leafType;
     }
 
     public LeafType getLeafType() {
@@ -23,7 +22,7 @@ public class Tree extends Plant {
 
     @Override
     public String toString() {
-        return "Tree{" +
+        return "Tree '" + super.getName() + "'{" +
                 "leafType=" + leafType +
                 '}';
     }

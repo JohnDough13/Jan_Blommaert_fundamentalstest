@@ -2,29 +2,28 @@ package be.intecbrussel.the_notebook.entities.plant_entities;
 
 public class Weed extends Plant{
 
-    protected Double area;
+    private double area;
 
 
     public Weed(String name) {
         super(name);
     }
 
-    public Weed(String name, Double height, Double area) {
+    public Weed(String name, double height) {
         super(name, height);
-        this.area = area;
     }
 
-    public Double getArea() {
+    public double getArea() {
         return area;
     }
 
-    public void setArea(Double area) {
+    public void setArea(double area) {
         this.area = area;
     }
 
     @Override
     public String toString() {
-        return "Weed{" +
+        return "Weed '" + super.getName() + "'{" +
                 "area=" + area +
                 '}';
     }

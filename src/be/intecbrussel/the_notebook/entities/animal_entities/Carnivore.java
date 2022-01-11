@@ -2,15 +2,15 @@ package be.intecbrussel.the_notebook.entities.animal_entities;
 
 public class Carnivore extends Animal{
 
-    protected double maxFoodSize;
+    private double maxFoodSize;
 
     public Carnivore(String name){
         super(name);
     }
 
-    public Carnivore(double weight, double height, double length, double maxFoodSize) {
-        super(weight, height, length);
-        this.maxFoodSize = maxFoodSize;
+    public Carnivore(String name, double weight, double height, double length) {
+        super(name,weight, height, length);
+
     }
 
     public double getMaxFoodSize() {
@@ -23,7 +23,7 @@ public class Carnivore extends Animal{
 
     @Override
     public String toString() {
-        return "Carnivore{" +
+        return "Carnivore '"+super.getName()+ "'{" +
                 "maxFoodSize=" + maxFoodSize +
                 '}';
     }
