@@ -12,9 +12,9 @@ public class Animal {
 
     public Animal(String name, double weight, double height, double length) {
         this.name = name;
-        this.weight = weight;
-        this.height = height;
-        this.length = length;
+        setWeight(weight);
+        setWeight(height);
+        setLength(length);
     }
 
     public String getName() {
@@ -42,6 +42,16 @@ public class Animal {
     }
 
     public void setLength(double length) {
-        this.length = (length>0)?length:-length;
+        this.length = (length > 0) ? length : -length;
+    }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "name='" + name + '\'' +
+                ", weight=" + weight +
+                ", height=" + height +
+                ", length=" + length +
+                '}';
     }
 }

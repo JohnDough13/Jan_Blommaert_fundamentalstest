@@ -8,10 +8,10 @@ import java.util.Set;
 public class Omnivore extends Animal{
 
     Set<Plant> plantDiet = new LinkedHashSet<>();
-    private double maxFoodSize;
+    private double maxFoodSize = .5;
 
     public Omnivore(String name) {
-        super(name);
+        this(name,60.81,1.35,1.55);
     }
 
     public Omnivore(String name, double weight, double height, double length) {
@@ -40,8 +40,8 @@ public class Omnivore extends Animal{
 
     @Override
     public String toString() {
-        return "Omnivore'"+super.getName()+"'{" +
-                "plantDiet=" + plantDiet +
+        return "Omnivore'"+super.toString()+"'{" +
+                "plantDiet=" + plantDiet + ", maxFoodSize=" + maxFoodSize +
                 '}';
     }
 }

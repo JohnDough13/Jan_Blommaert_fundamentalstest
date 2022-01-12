@@ -9,7 +9,7 @@ public class Herbivore extends Animal {
     Set<Plant> plantDiet = new LinkedHashSet<>();
 
     public Herbivore(String name) {
-        super(name);
+        this(name,0.8,0.2,1.1);
     }
 
     public Herbivore(String name, double weight, double height, double length) {
@@ -34,7 +34,7 @@ public class Herbivore extends Animal {
 
     @Override
     public String toString() {
-        return "Herbivore'"+super.getName()+"'{" +
+        return "Herbivore'"+super.toString()+"'{" +
                 "plantDiet=" + plantDiet +
                 '}';
     }

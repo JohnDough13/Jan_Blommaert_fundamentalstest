@@ -53,5 +53,10 @@ public class NatureApp {
         System.out.println(edenInTheMaking.getPlantCount());
         System.out.println(edenInTheMaking.getAnimalCount());
 
+        edenInTheMaking.sortPlantsByName();
+        edenInTheMaking.sortPlantsByHeight();
+        edenInTheMaking.sortAnimalsByName();
+        edenInTheMaking.sortAnimalsByHeight();
+        edenInTheMaking.printNotebook();
     }
 }

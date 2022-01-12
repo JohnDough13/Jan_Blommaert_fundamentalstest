@@ -2,11 +2,11 @@ package be.intecbrussel.the_notebook.entities.plant_entities;
 
 public class Weed extends Plant{
 
-    private double area;
+    private double area = 9;
 
 
     public Weed(String name) {
-        super(name);
+        super(name,10.5);
     }
 
     public Weed(String name, double height) {
@@ -23,7 +23,7 @@ public class Weed extends Plant{
 
     @Override
     public String toString() {
-        return "Weed '" + super.getName() + "'{" +
+        return "Weed '" + super.toString() + "'{" +
                 "area=" + area +
                 '}';
     }

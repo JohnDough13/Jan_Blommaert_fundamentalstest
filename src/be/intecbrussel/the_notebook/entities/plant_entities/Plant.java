@@ -7,7 +7,7 @@ public class Plant {
 
     public Plant(String name) {
 
-        this(name, 1.0);
+        this(name, 50.50);
     }
 
     public Plant(String name, double height) {
@@ -27,4 +27,11 @@ public class Plant {
         this.height = (height > 0) ? height : -height;
     }
 
+    @Override
+    public String toString() {
+        return "Plant{" +
+                "name='" + name + '\'' +
+                ", height=" + height +
+                '}';
+    }
 }

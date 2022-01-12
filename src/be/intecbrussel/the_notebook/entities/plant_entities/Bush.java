@@ -2,11 +2,11 @@ package be.intecbrussel.the_notebook.entities.plant_entities;
 
 public class Bush extends Plant {
 
-    private String fruit;
-    private LeafType leafType;
+    private String fruit = "flower power";
+    private LeafType leafType = LeafType.SPEAR;
 
     public Bush(String name) {
-        super(name);
+        this(name, 5);
     }
 
     public Bush(String name, double height) {
